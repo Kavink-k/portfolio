@@ -1,0 +1,38 @@
+/* src/components/SkillIcon.css */
+.skill-icon-card {
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: 0 3px 10px var(--shadow-light);
+  padding: var(--spacing-md);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 150px; /* Ensure consistent height in grid */
+}
+
+.skill-icon-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px var(--shadow-hover);
+}
+
+.skill-icon {
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-sm);
+}
+
+.skill-name {
+  font-weight: 700;
+  color: var(--text-color-dark);
+  margin-bottom: var(--spacing-xs);
+}
+
+.skill-category {
+  font-size: 0.85rem;
+  color: #777;
+  padding: 3px 8px;
+  background-color: #EEE;
+  border-radius: 5px;
+}

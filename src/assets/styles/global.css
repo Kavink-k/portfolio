@@ -1,0 +1,134 @@
+/* src/assets/styles/global.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap'); /* Example font */
+@import './variables.css'; /* Import custom properties */
+
+/* Basic Reset & Box Sizing */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family-sans);
+  line-height: 1.6;
+  color: var(--text-color-dark);
+  background-color: var(--background-light);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.main-content {
+  flex: 1; /* Pushes footer to the bottom */
+  padding-top: 70px; /* Adjust based on header height */
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: var(--spacing-sm);
+  color: var(--text-color-dark);
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+
+p {
+  margin-bottom: var(--spacing-sm);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-lg);
+}
+
+.section {
+  padding: var(--spacing-xl) 0;
+  text-align: center;
+}
+
+.section-dark {
+  background-color: var(--background-dark);
+  color: var(--text-color-light);
+}
+
+.section-dark h2, .section-dark h3 {
+  color: var(--text-color-light);
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: var(--text-color-light);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn:hover {
+  background-color: var(--secondary-color);
+  text-decoration: none;
+}
+
+.btn-secondary {
+  background-color: var(--secondary-color);
+  margin-left: var(--spacing-sm);
+}
+
+.btn-secondary:hover {
+  background-color: var(--primary-color);
+}
+
+/* Utility Classes */
+.text-center { text-align: center; }
+.margin-top-lg { margin-top: var(--spacing-lg); }
+.margin-bottom-lg { margin-bottom: var(--spacing-lg); }
+.padding-lg { padding: var(--spacing-lg); }
+
+/* FontAwesome for icons (install instructions below) */
+.fab, .fas {
+  margin-right: 8px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.75rem; }
+  .container {
+    padding: var(--spacing-md);
+  }
+}

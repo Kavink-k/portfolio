@@ -1,0 +1,25 @@
+/* src/components/Footer.css */
+.footer {
+  text-align: center;
+  padding: var(--spacing-lg) 0;
+  margin-top: auto; /* Pushes footer to bottom */
+  background-color: var(--footer-bg);
+  color: var(--text-color-light);
+}
+
+.footer p {
+  margin-bottom: var(--spacing-sm);
+  font-size: 0.9rem;
+}
+
+.footer .social-links a {
+  color: var(--text-color-light);
+  margin: 0 var(--spacing-sm);
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.footer .social-links a:hover {
+  color: var(--primary-color);
+  text-decoration: none;
+}

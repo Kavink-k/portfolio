@@ -1,0 +1,153 @@
+/* src/pages/Home.css */
+.home-hero {
+  background-color: var(--background-light);
+  padding: var(--spacing-xl) 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 70px); /* Adjust for header */
+}
+
+.hero-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-lg);
+  flex-wrap: wrap-reverse; /* Image on right, text on left for desktop */
+  padding-top: var(--spacing-lg); /* Space below header */
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 300px;
+  text-align: left;
+}
+
+.hero-text h1 {
+  font-size: 3.5rem;
+  margin-bottom: var(--spacing-xs);
+  color: var(--text-color-dark);
+}
+
+.hero-text h2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-md);
+}
+
+.hero-text .highlight {
+  color: var(--secondary-color);
+}
+
+.hero-text .tagline {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: var(--spacing-lg);
+}
+
+.hero-buttons {
+  margin-top: var(--spacing-lg);
+}
+
+.hero-image {
+  flex: 1;
+  min-width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-pic {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid var(--primary-color);
+  box-shadow: 0 10px 20px var(--shadow-light);
+  transition: transform 0.3s ease;
+}
+
+.profile-pic:hover {
+  transform: scale(1.03);
+}
+
+/* src/pages/Home.css */
+
+.about-me-section {
+
+  scroll-margin-top: 250px;
+
+  padding: var(--spacing-xl) var(--spacing-lg); /* Added some horizontal padding */
+  text-align: center;
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: 0 5px 15px var(--shadow-light);
+  max-width: 900px; /* Keeps it centered and narrower */
+}
+
+.about-me-section h2 {
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-lg);
+  position: relative;
+  display: inline-block;
+}
+
+.about-me-section h2::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: var(--secondary-color);
+  border-radius: 2px;
+}
+
+.about-me-section p {
+  max-width: 700px;
+  margin: 0 auto var(--spacing-lg) auto;
+  line-height: 1.8;
+  color: #444;
+}
+
+@media (max-width: 992px) {
+  .hero-content {
+    flex-direction: column-reverse; /* Image on top, text below for mobile */
+  }
+
+  .hero-text {
+    text-align: center;
+    margin-top: var(--spacing-lg);
+  }
+
+  .hero-text h1 { font-size: 3rem; }
+  .hero-text h2 { font-size: 1.75rem; }
+  .profile-pic {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-text h1 { font-size: 2.5rem; }
+  .hero-text h2 { font-size: 1.5rem; }
+  .hero-text .tagline { font-size: 1rem; }
+  .hero-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+  }
+  .hero-buttons .btn {
+    width: 80%;
+  }
+  .hero-buttons .btn-secondary {
+    margin-left: 0;
+  }
+  .profile-pic {
+    width: 200px;
+    height: 200px;
+  }
+}

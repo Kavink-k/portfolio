@@ -1,0 +1,27 @@
+/* src/assets/styles/variables.css */
+:root {
+  --primary-color: #1e15d4; /* A vibrant purple/blue */
+  --secondary-color: #000000; /* A complementary teal */
+  --accent-color: #FF5722; /* A warm orange for highlights */
+  --background-light: #F8F8F8; /* Light grey for backgrounds */
+  --background-dark: #222831; /* Dark grey for sections */
+  --text-color-dark: #333;
+  --text-color-light: #EEE;
+  --header-bg: #FFFFFF;
+  --footer-bg: #393E46;
+  --card-bg: #FFFFFF;
+  --border-color: #EEE;
+  --shadow-light: rgba(0, 0, 0, 0.1);
+  --shadow-hover: rgba(0, 0, 0, 0.2);
+
+  --font-family-sans: 'Roboto', sans-serif; /* Or 'Inter', 'Open Sans' */
+  --font-family-mono: 'Fira Code', monospace;
+
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+
+  --border-radius: 8px;
+}
