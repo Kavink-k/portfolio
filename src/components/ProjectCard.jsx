@@ -6,7 +6,11 @@ import './ProjectCard.css';
 function ProjectCard({ project }) {
   return (
     <div className="project-card">
-      <img src={project.thumbnail} alt={project.title} className="project-thumbnail" />
+<img
+  src={`${import.meta.env.BASE_URL}${project.thumbnail.replace(/^\//, '')}`}
+  alt={project.title}
+  className="project-thumbnail"
+/>
       <div className="card-content">
         <h3>{project.title}</h3>
         <p className="project-category">{project.category}</p>

@@ -98,3 +98,27 @@
   }
   
 }
+@media (max-width: 393px) and (max-height: 853px) {
+  .header {
+    position: relative; /* Remove fixed behavior */
+    top: 0;
+    padding: 0.8rem 0; /* Slightly reduce height for mobile */
+  }
+
+  .header-content {
+    flex-direction: column; /* Stack logo + nav */
+    padding-top: 0.2rem;
+    text-align: center;
+  }
+
+  .main-nav ul {
+    padding-top: 0.3rem;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .main-nav li {
+    margin: 0;
+  }
+}

@@ -26,7 +26,8 @@ function Home() {
           </div>
           <div className="hero-image">
             {/* 4. Removed the inline style, use your CSS file instead */}
-            <img src={personalInfo.profilePic} alt={personalInfo.name} className="profile-pic" />
+            <img   src={`${import.meta.env.BASE_URL}${personalInfo.profilePic.replace(/^\//, '')}`}
+ alt={personalInfo.name} className="profile-pic" />
           </div>
         </div>
       </section>
