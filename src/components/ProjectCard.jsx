@@ -12,7 +12,7 @@ function ProjectCard({ project }) {
         <p className="project-category">{project.category}</p>
         <p className="project-description">{project.description}</p>
         <div className="project-technologies">
-          {project.technologies.map((tech, index) => (
+          {project.technologies.map((tech, index) => ( 
             <span key={index} className="tech-badge">{tech}</span>
           ))}
         </div>

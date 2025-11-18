@@ -52,8 +52,31 @@
   text-decoration: none;
 }
 
-/* We removed the .active-link styles as they require JavaScript to track scrolling */
 
+/* 2. Create the line using the ::after pseudo-element */
+.main-nav a::after {
+  content: ''; /* Pseudo-elements must have a content property */
+  position: absolute;
+  width: 100%;
+  height: 2px; /* Adjust thickness of the line */
+  background-color: var(--primary-color);
+  
+  /* Position the line at the bottom and center */
+  bottom: -5px; /* Adjust distance from the text */
+  left: 0;
+
+  /* --- The Animation Magic --- */
+  transform: scaleX(0); /* Start with the line scaled down to zero width */
+  transform-origin: center; /* Set the origin of the transform to the center */
+  transition: transform 0.3s ease-in-out; /* Add a smooth transition for the transform property */
+}
+
+/* 3. Animate the line on hover */
+.main-nav a:hover::after {
+  transform: scaleX(1); /* Scale the line to its full width on hover */
+}
+
+/* ... (keep your @media query styles at the bottom) ... */
 @media (max-width: 768px) {
   .header-content {
     flex-direction: column;
@@ -73,4 +96,5 @@
   .main-nav li {
     margin: 0 var(--spacing-sm) var(--spacing-sm) var(--spacing-sm);
   }
+  
 }

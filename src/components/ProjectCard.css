@@ -1,0 +1,94 @@
+/* src/components/ProjectCard.css */
+.project-card {
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: 0 5px 15px var(--shadow-light);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%; /* Ensure cards in a grid have equal height */
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px var(--shadow-hover);
+}
+
+.project-thumbnail {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-content {
+  padding: var(--spacing-md);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card h3 {
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-xs);
+  font-size: 1.4rem;
+}
+
+.project-category {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: var(--spacing-sm);
+}
+
+.project-description {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: var(--spacing-md);
+  flex-grow: 1; /* Allows description to take available space */
+}
+
+.project-technologies {
+  margin-top: auto; /* Pushes technologies to bottom of content area */
+  margin-bottom: var(--spacing-md);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tech-badge {
+  background-color: #E0E0E0;
+  color: #555;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.85rem;
+  white-space: nowrap; /* Prevent breaking in the middle of a word */
+}
+
+.project-links {
+  display: flex;
+  justify-content: flex-start;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-sm);
+}
+
+.project-links .btn {
+  padding: 8px 15px;
+  font-size: 0.9rem;
+}
+
+.btn-github {
+  background-color: #333;
+}
+
+.btn-github:hover {
+  background-color: #555;
+}
+
+.btn-live {
+  background-color: var(--secondary-color);
+}
+
+.btn-live:hover {
+  background-color: #008C94;
+}
