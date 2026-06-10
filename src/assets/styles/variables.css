@@ -1,27 +1,80 @@
 /* src/assets/styles/variables.css */
 :root {
-  --primary-color: #1e15d4; /* A vibrant purple/blue */
-  --secondary-color: #000000; /* A complementary teal */
-  --accent-color: #FF5722; /* A warm orange for highlights */
-  --background-light: #F8F8F8; /* Light grey for backgrounds */
-  --background-dark: #222831; /* Dark grey for sections */
-  --text-color-dark: #333;
-  --text-color-light: #EEE;
-  --header-bg: #FFFFFF;
-  --footer-bg: #393E46;
-  --card-bg: #FFFFFF;
-  --border-color: #EEE;
-  --shadow-light: rgba(0, 0, 0, 0.1);
-  --shadow-hover: rgba(0, 0, 0, 0.2);
-
-  --font-family-sans: 'Roboto', sans-serif; /* Or 'Inter', 'Open Sans' */
-  --font-family-mono: 'Fira Code', monospace;
-
+  /* Colors - Light Theme (Default Alabaster/Cream & Charcoal) */
+  --bg-primary: #FAF9F6;       /* Warm cream/alabaster neutral */
+  --bg-secondary: #F4F2EE;     /* Muted warm grey for contrast */
+  --bg-surface: #FFFFFF;       /* Pure white for containers/cards */
+  --bg-surface-elevated: #FFFFFF;
+  
+  --text-primary: #17181A;     /* Dark charcoal */
+  --text-secondary: #5C5E62;   /* Elegant slate-grey for descriptions */
+  --text-muted: #8F9196;       /* Soft grey for sub-details */
+  
+  --border-color: #E2E1DD;     /* Muted border grey */
+  --border-focus: #4F46E5;     /* Indigo focus */
+  
+  /* Primary Accent: Electric Indigo */
+  --accent: #4F46E5;
+  --accent-rgb: 79, 70, 229;
+  --accent-light: #EEF2FF;
+  --accent-hover: #4338CA;
+  
+  /* Status/Support Colors */
+  --success: #10B981;
+  --info: #3B82F6;
+  --warning: #F59E0B;
+  --danger: #EF4444;
+  
+  /* Layout Spacing */
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
   --spacing-md: 1.5rem;
   --spacing-lg: 2rem;
-  --spacing-xl: 3rem;
+  --spacing-xl: 3.5rem;
+  --spacing-xxl: 6rem;
+  
+  /* Shape & Shadow Tokens */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+  
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 10px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+  --shadow-lg: 0 16px 24px -3px rgba(0, 0, 0, 0.06), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+  --shadow-glow: 0 0 20px rgba(79, 70, 229, 0.12);
+  
+  /* Typography */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Outfit', system-ui, -apple-system, sans-serif;
+  
+  /* Transition Constants */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-  --border-radius: 8px;
+/* Dark Theme Overrides (using data-theme="dark" attribute on html/body element) */
+[data-theme="dark"] {
+  --bg-primary: #0A0C10;       /* Jet black/charcoal neutral */
+  --bg-secondary: #121620;     /* Muted dark slate neutral */
+  --bg-surface: #171C26;       /* Medium slate card surface */
+  --bg-surface-elevated: #202735; /* Brighter slate for overlays */
+  
+  --text-primary: #F3F4F6;     /* Crisp off-white */
+  --text-secondary: #A0A5B5;   /* Warm silver-grey */
+  --text-muted: #6B7280;       /* Muted grey */
+  
+  --border-color: #212836;     /* Slate border */
+  --border-focus: #818CF8;     /* Brighter indigo focus */
+  
+  --accent: #6366F1;           /* Electric Indigo */
+  --accent-rgb: 99, 102, 241;
+  --accent-light: rgba(99, 102, 241, 0.15);
+  --accent-hover: #4F46E5;
+  
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 10px -1px rgba(0, 0, 0, 0.25), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.35), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+  --shadow-glow: 0 0 25px rgba(99, 102, 241, 0.2);
 }

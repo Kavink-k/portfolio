@@ -1,124 +1,205 @@
-/* src/components/Header.css (Simplified) */
+/* src/components/Header.css */
+
 .header {
-  background-color: var(--header-bg);
-  color: var(--text-color-dark);
-  font-family:'system-ui';
-  padding: var(--spacing-sm) 0;
-  box-shadow: 0 2px 10px var(--shadow-light);
   position: fixed;
-  width: 100%;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 80px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
   z-index: 1000;
+  border-bottom: 1px solid transparent;
+  transition: background-color var(--transition-normal), border-color var(--transition-normal), height var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+/* Scrolled state header style (glassmorphic) */
+.header-scrolled {
+  height: 70px;
+  background-color: rgba(var(--accent-rgb), 0.02);
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+}
+
+[data-theme="dark"] .header-scrolled {
+  background-color: rgba(10, 12, 16, 0.7);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="light"] .header-scrolled {
+  background-color: rgba(250, 249, 246, 0.8);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
 }
 
 .header-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 
 .site-logo {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: var(--text-color-dark);
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.03em;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: transform var(--transition-fast);
+}
+
+.site-logo:hover {
+  transform: scale(1.02);
   text-decoration: none;
 }
 
-.site-logo span {
-  color: var(--primary-color);
+.logo-dot {
+  color: var(--accent);
+  font-weight: 800;
+  margin-left: 1px;
 }
 
+/* Nav Menu Links Styling */
 .main-nav ul {
-  list-style: none;
   display: flex;
-}
-
-.main-nav li {
-  margin-left: var(--spacing-lg);
+  list-style: none;
+  gap: var(--spacing-lg);
+  align-items: center;
 }
 
 .main-nav a {
-  color: var(--text-color-dark);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
   text-decoration: none;
-  font-weight: 500;
-  padding: 5px 0;
   position: relative;
-  transition: color 0.3s ease; /* Add a simple transition */
+  padding: 8px 4px;
+  letter-spacing: 0.02em;
+  transition: color var(--transition-fast);
 }
 
 .main-nav a:hover {
-  color: var(--primary-color);
+  color: var(--accent);
   text-decoration: none;
 }
 
-
-/* 2. Create the line using the ::after pseudo-element */
+/* Bottom sliding line indicator */
 .main-nav a::after {
-  content: ''; /* Pseudo-elements must have a content property */
+  content: "";
   position: absolute;
-  width: 100%;
-  height: 2px; /* Adjust thickness of the line */
-  background-color: var(--primary-color);
-  
-  /* Position the line at the bottom and center */
-  bottom: -5px; /* Adjust distance from the text */
   left: 0;
-
-  /* --- The Animation Magic --- */
-  transform: scaleX(0); /* Start with the line scaled down to zero width */
-  transform-origin: center; /* Set the origin of the transform to the center */
-  transition: transform 0.3s ease-in-out; /* Add a smooth transition for the transform property */
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--accent);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--transition-normal);
 }
 
-/* 3. Animate the line on hover */
 .main-nav a:hover::after {
-  transform: scaleX(1); /* Scale the line to its full width on hover */
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
-/* ... (keep your @media query styles at the bottom) ... */
+/* Active Navigation Item (Scrollspy) */
+.main-nav a.active {
+  color: var(--accent);
+}
+
+.main-nav a.active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Theme Switch Toggle Button */
+.header-actions {
+  display: flex;
+  align-items: center;
+}
+
+.theme-toggle-btn {
+  background: none;
+  border: 1px solid var(--border-color);
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-primary);
+  background-color: var(--bg-surface);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+}
+
+.theme-toggle-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: scale(1.08) rotate(15deg);
+  box-shadow: 0 0 15px rgba(var(--accent-rgb), 0.2);
+}
+
+.toggle-icon {
+  font-size: 1.15rem;
+  transition: transform var(--transition-normal);
+}
+
+.moon-icon {
+  color: #4b5563;
+}
+
+.sun-icon {
+  color: #f59e0b;
+}
+
+/* Responsive Styles */
 @media (max-width: 768px) {
-  .header-content {
-    flex-direction: column;
-    padding: var(--spacing-sm);
-  }
-
-  .site-logo {
-    margin-bottom: var(--spacing-sm);
-  }
-
-  .main-nav ul {
-    margin-top: var(--spacing-sm);
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .main-nav li {
-    margin: 0 var(--spacing-sm) var(--spacing-sm) var(--spacing-sm);
+  .header {
+    height: 70px;
   }
   
-}
-@media (max-width: 393px) and (max-height: 853px) {
-  .header {
-    position: relative; /* Remove fixed behavior */
-    top: 0;
-    padding: 0.8rem 0; /* Slightly reduce height for mobile */
+  .header-scrolled {
+    height: 65px;
   }
 
-  .header-content {
-    flex-direction: column; /* Stack logo + nav */
-    padding-top: 0.2rem;
-    text-align: center;
+  .main-nav {
+    display: none; /* In a full responsive nav we'd use a mobile menu. 
+                     For portfolio simplicity, we can also stack links nicely or leave them. 
+                     Let's make links display cleanly centered on mobile if space permits, or wrap. */
   }
 
   .main-nav ul {
-    padding-top: 0.3rem;
-    justify-content: center;
-    gap: 0.5rem;
-    flex-wrap: wrap;
+    gap: var(--spacing-sm);
   }
+  
+  /* Show nav links centered but smaller on tablets */
+  @media (min-width: 480px) {
+    .main-nav {
+      display: block;
+    }
+    .main-nav a {
+      font-size: 0.85rem;
+      padding: 4px;
+    }
+    .main-nav ul {
+      gap: 12px;
+    }
+  }
+}
 
-  .main-nav li {
-    margin: 0;
+@media (max-width: 479px) {
+  .header-content {
+    justify-content: space-between;
+  }
+  .main-nav {
+    display: none; /* Fully hide menu on tiny phones, rely on scrolling, logo takes back home */
   }
 }
