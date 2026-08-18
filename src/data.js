@@ -77,7 +77,7 @@ export const experience = [
   {
     role: "Full Stack Development Trainee",
     company: "Younder Bots pvt. ltd.",
-    duration: "03/2026 - Present",
+    duration: "03/2026 - 05/2026",
     location: "Salem, Tamil Nadu",
     bullets: [
       "Developed full-stack applications using React.js for frontend and FastAPI for backend framework.",
