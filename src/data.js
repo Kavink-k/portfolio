@@ -188,7 +188,7 @@ export const timelineEvents = [
     projectLink: "tickethub"
   },
   {
-    year: "03/2026 - Present",
+    year: "03/2026 - 05/2026",
     title: "Full Stack Development Trainee",
     organization: "Younder Bots pvt. ltd.",
     description: "Developing FastAPI backend services, building responsive forms in React, managing PostgreSQL schemas.",
