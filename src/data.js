@@ -159,7 +159,7 @@ export const projects = [
     githubLink: "https://github.com/Kavink-k",
     liveDemoLink: "https://kavink-k.github.io/portfolio/",
     role: "Full Stack Development Trainee",
-    duration: "03/2026 - Present",
+    duration: "03/2026 - 05/2026",
     methodology: "Full Stack Integration, Client-Server Sync, Schema Optimization",
     resumeLinkage: "Developed as a Full-Stack Trainee project at Younder Bots pvt. ltd., validating PostgreSQL integrations and real-time syncing pipelines.",
     features: [
